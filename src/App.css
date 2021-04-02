@@ -147,7 +147,7 @@ a {
   font-size: 12px;
   font-weight: 400;
   color: rgb(69, 69, 69);
-  max-height: 25px !important;
+  max-height: 20px !important;
 }
 
 .chat__info h4 {
