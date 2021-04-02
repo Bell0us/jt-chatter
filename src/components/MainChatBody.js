@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useStateValue } from '../StateProvider';
 
 function MainChatBody({ messages }) {
   const [{ user }] = useStateValue();
+
+  const body = document.querySelector('.main__body');
+  useEffect(() => {
+    body != null ? (body.scrollTop = body.scrollHeight) : console.log('fuck');
+  });
+
   return (
-    <div className="main__body">
+    <div className="main__body" id="main_body">
       <p className={`body__msg`}>
         You can start chatting!
         <span className="msg__name">
@@ -12,7 +18,7 @@ function MainChatBody({ messages }) {
         </span>
       </p>
       {messages.map((msg) => (
-        <p className={`body__msg ${msg.name === user.displayName && 'msg__send'}`}>
+        <p key={msg.message} className={`body__msg ${msg.name === user.displayName && 'msg__send'}`}>
           {msg.message}
           <span className="msg__name">
             {msg.name} <span className="msg__time">{new Date(msg.timestamp?.toDate()).toUTCString()}</span>

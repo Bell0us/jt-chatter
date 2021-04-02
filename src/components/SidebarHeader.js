@@ -14,19 +14,19 @@ const SidebarHeader = ({ darkMode, setDM }) => {
       <Avatar variant="rounded" src={user?.photoURL} />
       <div className="header__controls">
         <IconButton>
-          <SettingsIcon style={{ fontSize: 30 }} />
+          <SettingsIcon style={{ fontSize: 25 }} />
         </IconButton>
         {!darkMode ? (
           <IconButton onClick={() => setDM(true)}>
-            <BrightnessHighIcon style={{ fontSize: 30 }} />
+            <BrightnessHighIcon style={{ fontSize: 25 }} />
           </IconButton>
         ) : (
           <IconButton onClick={() => setDM(false)}>
-            <Brightness4Icon style={{ fontSize: 30 }} />
+            <Brightness4Icon style={{ fontSize: 25 }} />
           </IconButton>
         )}
         <IconButton>
-          <InfoIcon style={{ fontSize: 30 }} />
+          <InfoIcon style={{ fontSize: 25 }} />
         </IconButton>
       </div>
     </div>

@@ -47,8 +47,6 @@ a {
   justify-content: space-between;
   align-items: center;
 
-  width: 40%;
-
   color: rgb(68, 68, 68) !important;
 }
 
@@ -147,7 +145,9 @@ a {
 
 .chat__info p {
   font-size: 12px;
+  font-weight: 400;
   color: rgb(69, 69, 69);
+  max-height: 25px !important;
 }
 
 .chat__info h4 {
@@ -169,6 +169,10 @@ a {
 
 .main__chat {
   grid-area: chatroom;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
 
   margin: 1rem 0.5rem;
 
@@ -180,6 +184,7 @@ a {
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 
   padding: 1rem 1rem 1rem 2rem;
 }
@@ -192,15 +197,18 @@ a {
 }
 
 .main__body {
-  height: 70vh;
+  max-height: 70vh;
   background-image: url('./img/email-pattern.png');
   filter: invert(7%);
+  width: 93%;
 
-  margin: 0 2rem;
+  margin: auto;
   padding: 1.5rem;
   overflow-y: scroll;
 
   text-align: left;
+
+  flex: 1;
 }
 
 .body__msg {
@@ -245,6 +253,8 @@ a {
   align-items: center;
 
   padding: 0.5rem 2rem 0rem 2rem;
+  margin-bottom: 1rem;
+  width: 100%;
 }
 
 .footer__form {
@@ -287,7 +297,7 @@ a {
   background-color: #7de6cb;
   padding: 0.5rem 0;
 
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
 
   border-radius: 6px;
@@ -301,6 +311,7 @@ a {
 
 .send__icon {
   margin-left: 10px !important;
+  font-size: 16px !important;
 }
 
 .login {
