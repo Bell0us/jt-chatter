@@ -26,10 +26,6 @@ function App() {
                 {/* Chat component */}
                 <MainChat />
               </Route>
-              <Route path="/">
-                {/* Chat component */}
-                {/* <MainChat /> */}
-              </Route>
             </Switch>
           </Router>
         </div>

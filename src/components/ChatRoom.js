@@ -19,7 +19,7 @@ const ChatRoom = ({ name, id }) => {
         .orderBy('timestamp', 'desc')
         .onSnapshot((snapshot) => setMessages(snapshot.docs.map((doc) => doc.data())));
     }
-  });
+  }, [id]);
   return (
     <Link to={`/rooms/${id}`}>
       <div className="chat__room">
