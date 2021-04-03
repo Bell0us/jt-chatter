@@ -1,13 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import SidebarHeader from './SidebarHeader';
 
 import SearchIcon from '@material-ui/icons/Search';
 import SidebarChatRooms from './SidebarChatRooms';
 import db from '../firebase';
 
-const Sidebar = ({ darkMode, setDM }) => {
-  const [rooms, setRooms] = useState([]);
-
+const Sidebar = ({ darkMode, setDM, rooms, setRooms }) => {
   useEffect(() => {
     const unsubscribe = db.collection('rooms').onSnapshot((snapshot) =>
       setRooms(
@@ -21,7 +19,7 @@ const Sidebar = ({ darkMode, setDM }) => {
     return () => {
       unsubscribe();
     };
-  }, []);
+  });
   return (
     <div className="app__sidebar">
       {/* Sidebar header */}

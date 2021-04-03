@@ -6,8 +6,8 @@ function MainChatBody({ messages }) {
 
   const body = document.querySelector('.main__body');
   useEffect(() => {
-    body != null ? (body.scrollTop = body.scrollHeight) : console.log('fuck');
-  });
+    body != null && (body.scrollTop = body.scrollHeight);
+  }, [messages]);
 
   return (
     <div className="main__body" id="main_body">

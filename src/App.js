@@ -11,6 +11,9 @@ import { useStateValue } from './StateProvider';
 function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [{ user }] = useStateValue();
+  const [rooms, setRooms] = useState([]);
+
+  const creator = rooms[0]?.data.creator;
 
   return (
     <main>
@@ -20,11 +23,11 @@ function App() {
         <div className="App">
           <Router>
             {/* Sidebar component */}
-            <Sidebar darkMode={darkMode} setDM={setDarkMode} />
+            <Sidebar darkMode={darkMode} setDM={setDarkMode} rooms={rooms} setRooms={setRooms} />
             <Switch>
               <Route path="/rooms/:roomId">
                 {/* Chat component */}
-                <MainChat />
+                <MainChat creator={creator} />
               </Route>
             </Switch>
           </Router>
