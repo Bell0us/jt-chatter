@@ -19,7 +19,7 @@ const Sidebar = ({ darkMode, setDM, rooms, setRooms }) => {
     return () => {
       unsubscribe();
     };
-  });
+  }, []);
   return (
     <div className="app__sidebar">
       {/* Sidebar header */}

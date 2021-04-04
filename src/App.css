@@ -356,3 +356,9 @@ a {
   position: absolute;
   right: 5rem;
 }
+
+.id__show {
+  position: absolute;
+  background-color: #eee;
+  top: 115px;
+}

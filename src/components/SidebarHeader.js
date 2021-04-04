@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Avatar, IconButton } from '@material-ui/core';
 import SettingsIcon from '@material-ui/icons/Settings';
@@ -9,9 +9,24 @@ import { useStateValue } from '../StateProvider';
 
 const SidebarHeader = ({ darkMode, setDM }) => {
   const [{ user }] = useStateValue();
+  const [idVisibility, setIdVisibility] = useState(false);
+
+  const toggleId = () => {
+    if (idVisibility === false) {
+      setIdVisibility(true);
+    }
+    if (idVisibility === true) {
+      setIdVisibility(false);
+    }
+  };
   return (
     <div className="sidebar__header">
-      <Avatar variant="rounded" src={user?.photoURL} />
+      <Avatar variant="rounded" src={user?.photoURL} onClick={toggleId} />
+      {idVisibility && (
+        <p className="id__show">
+          <strong>Your ID:</strong> {user.uid}{' '}
+        </p>
+      )}
       <div className="header__controls">
         <IconButton>
           <SettingsIcon style={{ fontSize: 25 }} />

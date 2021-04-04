@@ -18,6 +18,7 @@ const SidebarChatRooms = ({ rooms }) => {
       });
     }
   };
+  console.log(rooms);
   return (
     <div className="sidebar__chat">
       <Button variant="contained" className="chat__add" disableElevation onClick={createChat}>
